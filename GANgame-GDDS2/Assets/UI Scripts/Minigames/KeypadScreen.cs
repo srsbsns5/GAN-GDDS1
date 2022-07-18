@@ -15,6 +15,7 @@ public class KeypadScreen : MonoBehaviour
     public AudioClip[] feedback;
 
     public ItemSpawn itemSpawn; //refer from itemSpawn
+    public LockDoor doorLock; //refer from LockDoor
 
     private void Start()
     {
@@ -57,6 +58,7 @@ public class KeypadScreen : MonoBehaviour
         {
             itemSpawn.enabled = true;
             itemSpawn.Spawn();
+            doorLock.isLocked = false;
             itemSpawn.gameObject.GetComponent<AudioSource>().PlayOneShot(feedback[1]);
             codeTextValue = "";
             
